@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Treasure - Authentication</title>
+    <link
+      rel="shortcut icon"
+      href="./images/icons/myriad.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .auth-container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+      }
+
+      .auth-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+      }
+
+      .auth-header h2 {
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .auth-header p {
+        opacity: 0.9;
+        font-size: 14px;
+      }
+
+      .auth-form {
+        padding: 30px 20px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #333;
+        font-size: 14px;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e1e5e9;
+        border-radius: 10px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        background: #f8f9fa;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: #667eea;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      .password-input-container {
+        position: relative;
+      }
+
+      .toggle-password {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #666;
+        font-size: 18px;
+      }
+
+      .auth-btn {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+      }
+
+      .auth-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+      }
+
+      .auth-btn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .auth-links {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .auth-links a {
+        color: #667eea;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .auth-links a:hover {
+        text-decoration: underline;
+      }
+
+      .error-message {
+        color: #e74c3c;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+
+      .success-message {
+        color: #27ae60;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .back-btn {
+        background: #6c757d;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+
+      .back-btn:hover {
+        background: #5a6268;
+      }
+
+      .verification-display {
+        text-align: center;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+      .verification-display h3 {
+        color: #27ae60;
+        margin-bottom: 10px;
+      }
+
+      .verification-display p {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        letter-spacing: 2px;
+      }
+
+      /* User Profile Modal Styles */
+      .profile-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .profile-modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 30px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+      }
+
+      .profile-close {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #999;
+      }
+
+      .profile-close:hover {
+        color: #333;
+      }
+
+      .profile-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .profile-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .profile-info {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+      }
+
+      .profile-info-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e1e5e9;
+      }
+
+      .profile-info-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .profile-info-label {
+        font-weight: 600;
+        color: #666;
+      }
+
+      .profile-info-value {
+        color: #333;
+        font-weight: 500;
+      }
+
+      .logout-btn {
+        width: 100%;
+        padding: 12px;
+        background: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .logout-btn:hover {
+        background: #c0392b;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 480px) {
+        .auth-container {
+          margin: 10px;
+        }
+
+        .auth-form {
+          padding: 20px 15px;
+        }
+      }
+
+      .form-image-container {
+        display: flex;
+        width: 100%;
+        max-width: 900px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .form-container {
+        flex: 1;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .image-container {
+        flex: 1;
+        display: none;
+        background-color: #f0f4f8;
+      }
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Desktop view styles */
+      @media (min-width: 768px) {
+        .form-image-container {
+          flex-direction: row;
+        }
+        .image-container {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Profile Modal -->
+    <div id="profileModal" class="profile-modal">
+      <div class="profile-modal-content">
+        <span class="profile-close">&times;</span>
+        <div class="profile-header">
+          <div class="profile-avatar" id="profileAvatar">U</div>
+          <h2 id="profileName">User Profile</h2>
+        </div>
+        <div class="profile-info" id="profileInfo">
+          <!-- Profile information will be dynamically populated -->
+        </div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <!-- Authentication Container -->
+    <div class="auth-container">
+      <!-- Sign In Form -->
+      <div id="signInForm" class="auth-section">
+        <div class="auth-header">
+          <h2>Welcome Back!</h2>
+          <p>Sign in to your Treasure account</p>
+        </div>
+        <form class="auth-form" id="signInFormElement">
+          <div class="form-group">
+            <label for="signInUsername">Username/Email</label>
+            <input type="text" id="signInUsername" required />
+            <div class="error-message" id="signInUsernameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signInPassword">Password</label>
+            <div class="password-input-container">
+              <input type="password" id="signInPassword" required />
+              <button
+                type="button"
+                class="toggle-password"
+                onclick="togglePassword('signInPassword')"
+              >
+                👁️
+              </button>
+            </div>
+            <div class="error-message" id="signInPasswordError"></div>
+          </div>
+          <button type="submit" class="auth-btn">Sign In</button>
+          <div class="auth-links">
+            <a href="#" onclick="showForgotPassword()">Forgot Password?</a
+            ><br /><br />
+            <a href="#" onclick="showSignUp()"
+              >Don't have an account? Sign Up</a
+            >
+          </div>
+        </form>
+      </div>
+
+      <!-- Sign Up Form -->
+      <div id="signUpForm" class="auth-section hidden">
+        <div class="auth-header">
+          <h2>Create Account</h2>
+          <p>Join Treasure today!</p>
+        </div>
+        <form class="auth-form" id="signUpFormElement">
+          <div class="form-group">
+            <label for="signUpUsername">Username</label>
+            <input type="text" id="signUpUsername" required />
+            <div class="error-message" id="signUpUsernameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signUpPhone">Phone Number</label>
+            <input type="tel" id="signUpPhone" required />
+            <div class="error-message" id="signUpPhoneError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signUpEmail">Email Address</label>
+            <input type="email" id="signUpEmail" required />
+            <div class="error-message" id="signUpEmailError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signUpPassword">Password</label>
+            <div class="password-input-container">
+              <input type="password" id="signUpPassword" required />
+              <button
+                type="button"
+                class="toggle-password"
+                onclick="togglePassword('signUpPassword')"
+              >
+                👁️
+              </button>
+            </div>
+            <div class="error-message" id="signUpPasswordError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signUpConfirmPassword">Confirm Password</label>
+            <div class="password-input-container">
+              <input type="password" id="signUpConfirmPassword" required />
+              <button
+                type="button"
+                class="toggle-password"
+                onclick="togglePassword('signUpConfirmPassword')"
+              >
+                👁️
+              </button>
+            </div>
+            <div class="error-message" id="signUpConfirmPasswordError"></div>
+          </div>
+          <button type="submit" class="auth-btn">Create Account</button>
+          <div class="auth-links">
+            <a href="#" onclick="showSignIn()"
+              >Already have an account? Sign In</a
+            >
+          </div>
+        </form>
+      </div>
+
+      <!-- Forgot Password Form -->
+      <div id="forgotPasswordForm" class="auth-section hidden">
+        <div class="auth-header">
+          <h2>Reset Password</h2>
+          <p>Enter your phone number to reset password</p>
+        </div>
+        <form class="auth-form" id="forgotPasswordFormElement">
+          <div class="form-group">
+            <label for="forgotPhone">Phone Number</label>
+            <input type="tel" id="forgotPhone" required />
+            <div class="error-message" id="forgotPhoneError"></div>
+          </div>
+          <div>
+            <button type="button" class="back-btn" onclick="showSignIn()">
+              Back
+            </button>
+            <button
+              type="submit"
+              class="auth-btn"
+              style="width: calc(100% - 90px)"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Verification Code Form -->
+      <div id="verificationForm" class="auth-section hidden">
+        <div class="auth-header">
+          <h2>Verification</h2>
+          <p>Enter the 6-digit verification code</p>
+        </div>
+        <form class="auth-form" id="verificationFormElement">
+          <div class="form-group">
+            <label for="verificationCode">Verification Code</label>
+            <input type="text" id="verificationCode" maxlength="6" required />
+            <div class="error-message" id="verificationCodeError"></div>
+            <div class="success-message" id="verificationCodeSuccess">
+              Code generated: <span id="generatedCode"></span>
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="back-btn"
+              onclick="showForgotPassword()"
+            >
+              Back
+            </button>
+            <button
+              type="submit"
+              class="auth-btn"
+              style="width: calc(100% - 90px)"
+            >
+              Verify
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Password Display Form -->
+      <div id="passwordDisplayForm" class="auth-section hidden">
+        <div class="auth-header">
+          <h2>Password Recovery</h2>
+          <p>Your account password</p>
+        </div>
+        <div class="auth-form">
+          <div class="verification-display">
+            <h3>Your Password:</h3>
+            <p id="displayedPassword"></p>
+          </div>
+          <button type="button" class="auth-btn" onclick="showSignIn()">
+            Back to Login
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>

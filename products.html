@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link
+      rel="shortcut icon"
+      href="./images/icons/myriad.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .favorite-btn.active ion-icon {
+        color: var(--salmon-pink);
+      }
+
+      .favorite-btn,
+      .cart-btn {
+        cursor: pointer;
+        color: white;
+      }
+      #favorites-section,
+      #cart-section,
+      #checkout-section,
+      #orders-section {
+        display: none;
+        padding: 20px;
+        background: var(--white);
+        margin: 20px auto;
+        border-radius: var(--border-radius-md);
+        box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.15);
+      }
+      .section-title {
+        color: var(--eerie-black);
+        font-size: var(--fs-4);
+        font-weight: var(--weight-600);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .cart-item,
+      .favorite-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--cultured);
+      }
+
+      .cart-total {
+        margin-top: 20px;
+        font-size: var(--fs-5);
+        font-weight: var(--weight-600);
+        text-align: right;
+      }
+      .checkout-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: var(--salmon-pink);
+        color: var(--white);
+        border-radius: var(--border-radius-sm);
+        text-align: center;
+        margin-top: 20px;
+      }
+      .checkout-form {
+        display: grid;
+        gap: 15px;
+      }
+      .checkout-form input,
+      .checkout-form select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--cultured);
+        border-radius: var(--border-radius-sm);
+      }
+      .payment-details {
+        margin-top: 15px;
+        border: 1px solid var(--cultured);
+        padding: 15px;
+        border-radius: var(--border-radius-sm);
+      }
+
+      .categories-container {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+      .category-btn {
+        background: var(--cultured);
+        padding: 8px 15px;
+        border-radius: var(--border-radius-md);
+        text-transform: capitalize;
+        font-size: var(--fs-7);
+        white-space: nowrap;
+      }
+      .category-btn.active {
+        background: var(--salmon-pink);
+        color: var(--white);
+      }
+
+      .showcase-actions button {
+        background: var(--ocean-green);
+        border-radius: 50%;
+        padding: 3px;
+      }
+      footer {
+        margin-top: 25px;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="container">
+          <p class="header-alert-news">
+            <b data-translate="free-shipping">Free Shipping</b>
+            <span data-translate="on-orders">on orders over $300</span>
+          </p>
+
+          <div class="header-top-actions">
+            <select name="language">
+              <option value="en-US">English</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-main">
+        <div class="container">
+          <a href="products.html" class="header-logo">
+            <img
+              src="./images/icons/myriad.png"
+              alt="Treasure's logo"
+              width="50"
+              height="50"
+            />
+          </a>
+
+          <div class="header-search-container">
+            <input
+              type="search"
+              name="search"
+              class="search-field"
+              data-translate="search-placeholder"
+              placeholder="Search products, categories..."
+              id="search-input"
+            />
+
+            <button class="search-btn">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+          </div>
+
+          <div class="header-user-actions">
+            <button class="action-btn" onclick="showFavorites()">
+              <ion-icon name="heart-outline"></ion-icon>
+              <span class="count" id="favorites-count">0</span>
+            </button>
+
+            <button class="action-btn" onclick="showCart()">
+              <ion-icon name="bag-handle-outline"></ion-icon>
+              <span class="count" id="cart-count">0</span>
+            </button>
+
+            <button class="action-btn" onclick="showOrderHistory()">
+              <ion-icon name="time-outline"></ion-icon>
+            </button>
+
+            <button class="action-btn">
+              <a href="home.html"> <ion-icon name="home-outline"></ion-icon></a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-bottom-navigation">
+      <button class="action-btn" onclick="showCart()">
+        <ion-icon name="bag-handle-outline"></ion-icon>
+        <span class="count" id="mobile-cart-count">0</span>
+      </button>
+
+      <button class="action-btn" onclick="showProducts()">
+        <a style="color: inherit">
+          <ion-icon name="bag-outline"></ion-icon>
+        </a>
+      </button>
+
+      <button class="action-btn" onclick="showFavorites()">
+        <ion-icon name="heart-outline"></ion-icon>
+        <span class="count" id="mobile-favorites-count">0</span>
+      </button>
+
+      <button class="action-btn" onclick="showCategories()">
+        <a href="home.html"> <ion-icon name="home-outline"></ion-icon></a>
+      </button>
+      <button class="action-btn" onclick="showOrderHistory()">
+        <ion-icon name="time-outline"></ion-icon>
+      </button>
+    </div>
+
+    <main class="main">
+      <div class="container">
+        <div id="products-container">
+          <h2 class="title" data-translate="all-products">All Products</h2>
+          <div class="categories-container" id="categories-container"></div>
+          <div class="product-grid" id="product-grid"></div>
+        </div>
+
+        <div id="favorites-section">
+          <h2 class="title" data-translate="my-favorites">My Favorites</h2>
+          <div id="favorites-list"></div>
+        </div>
+
+        <div id="cart-section">
+          <h2 class="title" data-translate="my-cart">My Cart</h2>
+          <div id="cart-list"></div>
+          <div class="cart-total" id="cart-total"></div>
+          <button
+            class="checkout-btn"
+            onclick="showCheckout()"
+            data-translate="checkout"
+          >
+            Checkout
+          </button>
+        </div>
+
+        <div id="checkout-section">
+          <h2 class="title" data-translate="checkout">Checkout</h2>
+
+          <form id="checkout-form" class="checkout-form">
+            <h3 data-translate="personal-details">Personal Details</h3>
+            <input
+              type="text"
+              id="name"
+              data-translate="full-name"
+              placeholder="Full Name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              data-translate="email"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="text"
+              id="address"
+              data-translate="shipping-address"
+              placeholder="Shipping Address"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              data-translate="phone-number"
+              placeholder="Phone Number"
+              required
+            />
+
+            <h3 data-translate="payment-method">Payment Method</h3>
+            <select id="payment-method" onchange="toggleBankDetails()">
+              <option value="cod" data-translate="cash-on-delivery">
+                Cash on Delivery
+              </option>
+              <option value="bank" data-translate="bank-transfer">
+                Bank Transfer
+              </option>
+            </select>
+
+            <div id="bank-details" class="payment-details">
+              <h4 data-translate="bank-account-details">
+                Bank Account Details
+              </h4>
+              <p data-translate="account-name">
+                Account Name: Treasure E-Commerce
+              </p>
+              <p data-translate="account-number">Account Number: 1234567890</p>
+              <p data-translate="bank">Bank: Generic Bank</p>
+              <p data-translate="transfer-instruction">
+                Please make the transfer and then click 'Submit Order'.
+              </p>
+            </div>
+
+            <button
+              type="submit"
+              class="checkout-btn"
+              data-translate="submit-order"
+            >
+              Submit Order
+            </button>
+          </form>
+        </div>
+
+        <div id="orders-section">
+          <h2 class="title" data-translate="my-order-history">
+            My Order History
+          </h2>
+          <div id="order-history-list"></div>
+          <button
+            class="checkout-btn"
+            onclick="clearOrderHistory()"
+            data-translate="clear-history"
+          >
+            Clear History
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!--FOOTER-->
+    <footer>
+      <div class="footer-category">
+        <div class="container">
+          <h2 class="footer-category-title" data-translate="brand-directory">
+            Brand directory
+          </h2>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title" data-translate="fashion">
+              Fashion :
+            </h3>
+
+            <a href="#" class="footer-category-link" data-translate="t-shirt"
+              >T-shirt</a
+            >
+            <a
+              href="#"
+              class="footer-category-link"
+              data-translate="shorts-jeans"
+              >shorts & jeans</a
+            >
+            <a href="#" class="footer-category-link" data-translate="jacket"
+              >jacket</a
+            >
+            <a
+              href="#"
+              class="footer-category-link"
+              data-translate="dress-frock"
+              >dress & frock</a
+            >
+            <a href="#" class="footer-category-link" data-translate="innerwear"
+              >innerwear</a
+            >
+          </div>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title" data-translate="footwear">
+              footwear :
+            </h3>
+
+            <a href="#" class="footer-category-link" data-translate="sport"
+              >sport</a
+            >
+            <a href="#" class="footer-category-link" data-translate="formal"
+              >formal</a
+            >
+            <a href="#" class="footer-category-link" data-translate="boots"
+              >Boots</a
+            >
+            <a href="#" class="footer-category-link" data-translate="casual"
+              >casual</a
+            >
+            <a
+              href="#"
+              class="footer-category-link"
+              data-translate="safety-shoes"
+              >safety shoes</a
+            >
+            <a
+              href="#"
+              class="footer-category-link"
+              data-translate="party-wear-shoes"
+              >Party wear shoes</a
+            >
+            <a href="#" class="footer-category-link" data-translate="branded"
+              >Branded</a
+            >
+          </div>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title" data-translate="jewellery">
+              jewellery :
+            </h3>
+
+            <a href="#" class="footer-category-link" data-translate="necklace"
+              >Necklace</a
+            >
+            <a
+              href="#"
+              class="footer-category-link"
+              data-translate="couple-rings"
+              >Couple rings</a
+            >
+            <a href="#" class="footer-category-link" data-translate="crystal"
+              >Crystal</a
+            >
+            <a href="#" class="footer-category-link" data-translate="bangles"
+              >Bangles</a
+            >
+            <a href="#" class="footer-category-link" data-translate="bracelets"
+              >bracelets</a
+            >
+            <a href="#" class="footer-category-link" data-translate="nosepin"
+              >nosepin</a
+            >
+            <a href="#" class="footer-category-link" data-translate="chain"
+              >chain</a
+            >
+            <a href="#" class="footer-category-link" data-translate="earrings"
+              >Earrings</a
+            >
+          </div>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title" data-translate="cosmetics">
+              cosmetics :
+            </h3>
+
+            <a href="#" class="footer-category-link" data-translate="shampoo"
+              >Shampoo</a
+            >
+            <a href="#" class="footer-category-link" data-translate="bodywash"
+              >Bodywash</a
+            >
+            <a href="#" class="footer-category-link" data-translate="facewash"
+              >Facewash</a
+            >
+            <a href="#" class="footer-category-link" data-translate="makeup-kit"
+              >makeup kit</a
+            >
+            <a href="#" class="footer-category-link" data-translate="lipstick"
+              >lipstick</a
+            >
+            <a href="#" class="footer-category-link" data-translate="prefume"
+              >prefume</a
+            >
+            <a href="#" class="footer-category-link" data-translate="scrub"
+              >scrub</a
+            >
+            <a href="#" class="footer-category-link" data-translate="hair-gel"
+              >hair gel</a
+            >
+            <a href="#" class="footer-category-link" data-translate="hair-dye"
+              >hair dye</a
+            >
+            <a href="#" class="footer-category-link" data-translate="sunscreen"
+              >sunscreen</a
+            >
+            <a href="#" class="footer-category-link" data-translate="liner"
+              >liner</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <div class="container">
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title" data-translate="popular-categories">
+                Popular Categories
+              </h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a
+                href="products.html?category=women"
+                class="footer-nav-link"
+                data-translate="women"
+                >Women</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a
+                href="products.html?category=electronics"
+                class="footer-nav-link"
+                data-translate="electronic-footer"
+                >Electronic</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a
+                href="products.html?category=jewellery"
+                class="footer-nav-link"
+                data-translate="jewellery"
+                >Jewellery</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a
+                href="products.html?category=footwear"
+                class="footer-nav-link"
+                data-translate="footwear"
+                >Footwear</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a
+                href="products.html?category=watch"
+                class="footer-nav-link"
+                data-translate="watches"
+                >Watches</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title" data-translate="products">Products</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="prices-drop"
+                >Prices drop</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="new-products"
+                >New products</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="best-sales"
+                >Best sales</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="popular-sales"
+                >Popular Sales</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="sitemap"
+                >Sitemap</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title" data-translate="our-company">
+                Our Company
+              </h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="delivery"
+                >Delivery</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="legal-notice"
+                >Legal Notice</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a
+                href="#"
+                class="footer-nav-link"
+                data-translate="terms-conditions"
+                >Terms and conditions</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="about-us"
+                >About us</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a
+                href="#"
+                class="footer-nav-link"
+                data-translate="secure-payment"
+                >Secure payment</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title" data-translate="services">Services</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="prices-drop"
+                >Prices drop</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="new-products"
+                >New products</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="best-sales"
+                >Best sales</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="contact-us"
+                >Contact us</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link" data-translate="sitemap"
+                >Sitemap</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title" data-translate="contact">Contact</h2>
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <address class="content">
+                Ochacho Estate idu, Abuja, 90001, Nigeria
+              </address>
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+
+              <a href="tel:+2349135206161" class="footer-nav-link"
+                >(234) 91-3520-6161</a
+              >
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <a href="mailto:treasureamuka@gmail.com" class="footer-nav-link"
+                >treasureamuka@gmail.com</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title" data-translate="follow-us">Follow Us</h2>
+            </li>
+
+            <li>
+              <ul class="social-link">
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <img
+            src="./images/payment.png"
+            alt="payment method"
+            class="payment-img"
+          />
+
+          <p class="copyright" data-translate="copyright">
+            Copyright &copy; <a href="#">Treasure</a> all rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/translation.js"></script>
+    <script src="js/products.js"></script>
+  </body>
+</html>

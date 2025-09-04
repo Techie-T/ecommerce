@@ -1,0 +1,2936 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Treasure - eCommerce Website</title>
+
+    <!--favicon-->
+    <link
+      rel="shortcut icon"
+      href="./images/icons/myriad.png"
+      type="image/x-icon"
+    />
+    <style>
+      .pad {
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 3px solid red;
+      }
+    </style>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!--google font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="overlay" data-overlay></div>
+
+    <!--Newsletter modal-->
+    <div class="modal" data-modal>
+      <div class="modal-close-overlay" data-modal-overlay></div>
+
+      <div class="modal-content">
+        <button class="modal-close-btn" data-modal-close>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <div class="newsletter-img">
+          <img
+            src="./images/banner.png"
+            alt="subscribe newsletter"
+            width="400"
+            height="400"
+          />
+        </div>
+
+        <div class="newsletter">
+          <form action="#">
+            <div class="newsletter-header">
+              <h3 class="newsletter-title">Subscribe Newsletter.</h3>
+
+              <p class="newsletter-desc">
+                Subscribe to the <b>Newsletter</b> to get latest products and
+                discount update.
+              </p>
+            </div>
+
+            <input
+              type="email"
+              name="email"
+              class="email-field"
+              placeholder="Email Address"
+              required
+            />
+
+            <button type="submit" class="btn-newsletter">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--NOTIFICATION TOAST-->
+    <div class="notification-toast" data-toast>
+      <button class="toast-close-btn" data-toast-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="toast-banner">
+        <img
+          src="./images/products/hair.jpg"
+          alt="Product"
+          width="80"
+          height="70"
+        />
+      </div>
+
+      <div class="toast-detail">
+        <p class="toast-message">Someone just bought</p>
+        <p class="toast-title">Shampoo & Face wash pack</p>
+        <p class="toast-meta"><time datetime="PT2M">2 Minutes</time> ago</p>
+      </div>
+    </div>
+
+    <!--HEADER-->
+    <header>
+      <div class="header-top">
+        <div class="container">
+          <ul class="header-social-container">
+            <li>
+              <a href="https://facebook.com/miadavis" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://twitter.com/trexzy236445" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://instagram.com/treasureamuka" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://linkedin.com/treasureamuka" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+          </ul>
+
+          <div class="header-alert-news">
+            <p>
+              <b>Free Shipping</b>
+              This Week Order Over - $300
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <nav class="desktop-navigation-menu">
+        <div class="container">
+          <ul class="desktop-menu-category-list">
+            <a href="#" class="header-logo">
+              <img
+                src="./images/icons/myriad.png"
+                alt="Treasure's logo"
+                width="50"
+                height="50"
+              />
+            </a>
+            <li class="menu-category">
+              <a href="#" class="menu-title">Home</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="products.html?category=electronic" class="menu-title"
+                >Electronics</a
+              >
+            </li>
+
+            <li class="menu-category">
+              <a href="#" class="menu-title">Men's</a>
+
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="products.html?category=men">Shirt</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=shorts">Shorts & Jeans</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=footwear">Safety Shoes</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=men">Wallet</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-category">
+              <a href="#" class="menu-title">Women's</a>
+
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="products.html?category=women">Dress</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Earrings</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Necklace</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="makeup">Makeup Kit</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-category">
+              <a href="#" class="menu-title">Jewelry</a>
+
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Earrings</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Couple Rings</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Necklace</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Bracelets</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-category">
+              <a href="#" class="menu-title">Perfume</a>
+
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="products.html?category=perfume">Clothes Perfume</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=perfume">Deodorant</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=perfume">Flower Fragrance</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=perfume">Air Freshener</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-category">
+              <a href="#blog" class="menu-title">Blog</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="#hot" class="menu-title">Hot Offers</a>
+            </li>
+
+            <button
+              class="action-btn user-indicator"
+              id="desktopProfileBtn"
+              onclick="logout()"
+            >
+              Logout
+            </button>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="mobile-bottom-navigation">
+        <button class="action-btn" data-mobile-menu-open-btn>
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <button class="action-btn">
+          <a href="products.html"> <ion-icon name="bag-outline"></ion-icon></a>
+        </button>
+
+        <button class="action-btn" data-mobile-menu-open-btn>
+          <ion-icon name="grid-outline"></ion-icon>
+        </button>
+
+        <button
+          class="action-btn user-indicator"
+          id="mobileProfileBtn"
+          onclick="openProfileModal()"
+        >
+          <ion-icon name="person-outline"></ion-icon>
+        </button>
+      </div>
+
+      <nav class="mobile-navigation-menu has-scrollbar" data-mobile-menu>
+        <div class="menu-top">
+          <h2 class="menu-title">Menu</h2>
+
+          <button class="menu-close-btn" data-mobile-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="mobile-menu-category-list">
+          <li class="menu-category">
+            <a href="#" class="menu-title">Home</a>
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Men's</p>
+
+              <div>
+                <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Shirt</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Shorts & Jeans</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Safety Shoes</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Wallet</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Women's</p>
+
+              <div>
+                <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Dress</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Earrings</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Necklace</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Makeup Kit</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Jewelry</p>
+
+              <div>
+                <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Earrings</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Couple Rings</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Necklace</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Bracelets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Perfume</p>
+
+              <div>
+                <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Clothes Perfume</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Deodorant</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Flower Fragrance</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Air Freshener</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a href="#blog" class="menu-title">Blog</a>
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Hot Offers</a>
+          </li>
+        </ul>
+
+        <div class="menu-bottom">
+          <ul class="menu-social-container">
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!--MAIN-->
+    <main>
+      <!--BANNER-->
+      <div class="banner">
+        <div class="container">
+          <div class="slider-container has-scrollbar">
+            <div class="slider-item">
+              <img
+                src="./images/banner.png"
+                alt="women's latest fashion sale"
+                class="banner-img"
+              />
+              <div class="banner-content">
+                <p class="banner-subtitle">Trending item</p>
+                <h2 class="banner-title">Women's latest fashion sale</h2>
+                <p class="banner-text">starting at &dollar; <b>20</b>.00</p>
+                <a href="products.html" class="banner-btn">Shop now</a>
+              </div>
+            </div>
+
+            <div class="slider-item">
+              <img
+                src="./images/banner3.png"
+                alt="modern sunglasses"
+                class="banner-img"
+              />
+              <div class="banner-content">
+                <p class="banner-subtitle">Trending Items</p>
+                <h2 class="banner-title">Men's Latest Fashion sale</h2>
+                <p class="banner-text">starting at &dollar; <b>15</b>.00</p>
+                <a href="products.html" class="banner-btn">Shop now</a>
+              </div>
+            </div>
+
+            <div class="slider-item">
+              <img
+                src="./images/banner4.png"
+                alt="new fashion summer sale"
+                class="banner-img"
+              />
+              <div class="banner-content">
+                <p class="banner-subtitle">Sale Offer</p>
+                <h2 class="banner-title">New fashion sale</h2>
+                <p class="banner-text">starting at &dollar; <b>29</b>.99</p>
+                <a href="products.html" class="banner-btn">Shop now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--CATEGORY-->
+      <div class="category">
+        <div class="container">
+          <div class="category-item-container has-scrollbar">
+            <div class="category-item">
+              <div class="category-img-box">
+                <img src="./images/icons/tees.png" alt="t-shirts" width="30" />
+              </div>
+
+              <div class="category-content-box">
+                <div class="category-content-flex">
+                  <h3 class="category-item-title">T-shirts</h3>
+
+                  <p class="category-item-amount">(35)</p>
+                </div>
+
+                <a href="products.html?category=men" class="category-btn"
+                  >Show all</a
+                >
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img-box">
+                <img src="./images/icons/jacket.png" alt="jacket" width="30" />
+              </div>
+
+              <div class="category-content-box">
+                <div class="category-content-flex">
+                  <h3 class="category-item-title">Jacket</h3>
+
+                  <p class="category-item-amount">(16)</p>
+                </div>
+
+                <a href="products.html?category=men" class="category-btn"
+                  >Show all</a
+                >
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img-box">
+                <img src="./images/icons/watch.png" alt="watch" width="30" />
+              </div>
+
+              <div class="category-content-box">
+                <div class="category-content-flex">
+                  <h3 class="category-item-title">Watch</h3>
+
+                  <p class="category-item-amount">(27)</p>
+                </div>
+
+                <a href="products.html?category=watch" class="category-btn"
+                  >Show all</a
+                >
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img-box">
+                <img src="./images/icons/hat.png" alt="hat & caps" width="30" />
+              </div>
+
+              <div class="category-content-box">
+                <div class="category-content-flex">
+                  <h3 class="category-item-title">Hat & caps</h3>
+
+                  <p class="category-item-amount">(39)</p>
+                </div>
+
+                <a href="products.html?category=hat" class="category-btn"
+                  >Show all</a
+                >
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img-box">
+                <img src="./images/icons/dress.png" alt="dress" width="30" />
+              </div>
+
+              <div class="category-content-box">
+                <div class="category-content-flex">
+                  <h3 class="category-item-title">Dress</h3>
+
+                  <p class="category-item-amount">(53)</p>
+                </div>
+
+                <a href="products.html?category=women" class="category-btn"
+                  >Show all</a
+                >
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img-box">
+                <img
+                  src="./images/icons/coat.png"
+                  alt="winter wear"
+                  width="30"
+                />
+              </div>
+
+              <div class="category-content-box">
+                <div class="category-content-flex">
+                  <h3 class="category-item-title">Winter wear</h3>
+
+                  <p class="category-item-amount">(58)</p>
+                </div>
+
+                <a href="products.html?category=all" class="category-btn"
+                  >Show all</a
+                >
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img-box">
+                <img
+                  src="./images/icons/glasses.png"
+                  alt="glasses & lens"
+                  width="30"
+                />
+              </div>
+
+              <div class="category-content-box">
+                <div class="category-content-flex">
+                  <h3 class="category-item-title">Glasses & lens</h3>
+
+                  <p class="category-item-amount">(68)</p>
+                </div>
+
+                <a href="products.html?category=jewellery" class="category-btn"
+                  >Show all</a
+                >
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img-box">
+                <img
+                  src="./images/icons/shorts.png"
+                  alt="shorts & jeans"
+                  width="30"
+                />
+              </div>
+
+              <div class="category-content-box">
+                <div class="category-content-flex">
+                  <h3 class="category-item-title">Shorts & jeans</h3>
+
+                  <p class="category-item-amount">(84)</p>
+                </div>
+
+                <a href="products.html?category=shorts" class="category-btn"
+                  >Show all</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--PRODUCT-->
+      <div id="hot" class="product-container">
+        <div class="container">
+          <!--SIDEBAR-->
+          <div class="sidebar has-scrollbar" data-mobile-menu>
+            <!--CATEGORY-->
+            <div class="sidebar-category">
+              <div class="sidebar-top">
+                <h2 class="sidebar-title pad">Category</h2>
+
+                <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                  <ion-icon name="close-outline"></ion-icon>
+                </button>
+              </div>
+
+              <ul class="sidebar-menu-category-list">
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        src="./images/icons/tee.png"
+                        alt="clothes"
+                        width="20"
+                        height="20"
+                        class="menu-title-img"
+                      />
+
+                      <p class="menu-title">Clothes</p>
+                    </div>
+
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                      <ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+
+                  <ul class="sidebar-submenu-category-list" data-accordion>
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Shirt</p>
+                        <data value="300" class="stock" title="Available Stock"
+                          >20</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">shorts & jeans</p>
+                        <data value="60" class="stock" title="Available Stock"
+                          >40</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">jacket</p>
+                        <data value="50" class="stock" title="Available Stock"
+                          >10</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">dress</p>
+                        <data value="87" class="stock" title="Available Stock"
+                          >40</data
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        src="./images/icons/shoes.png"
+                        alt="footwear"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+
+                      <p class="menu-title">Footwear</p>
+                    </div>
+
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                      <ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+
+                  <ul class="sidebar-submenu-category-list" data-accordion>
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Sport</p>
+                        <data value="45" class="stock" title="Available Stock"
+                          >35</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Formal</p>
+                        <data value="75" class="stock" title="Available Stock"
+                          >45</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Casual</p>
+                        <data value="35" class="stock" title="Available Stock"
+                          >35</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Safety Shoes</p>
+                        <data value="26" class="stock" title="Available Stock"
+                          >16</data
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        src="./images/icons/jewelry.png"
+                        alt="clothes"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+
+                      <p class="menu-title">Jewelry</p>
+                    </div>
+
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                      <ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+
+                  <ul class="sidebar-submenu-category-list" data-accordion>
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Earrings</p>
+                        <data value="46" class="stock" title="Available Stock"
+                          >16</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Couple Rings</p>
+                        <data value="73" class="stock" title="Available Stock"
+                          >20</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Necklace</p>
+                        <data value="61" class="stock" title="Available Stock"
+                          >30</data
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        src="./images/icons/perfume.png"
+                        alt="perfume"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+
+                      <p class="menu-title">Perfume</p>
+                    </div>
+
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                      <ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+
+                  <ul class="sidebar-submenu-category-list" data-accordion>
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Clothes Perfume</p>
+                        <data value="12" class="stock" title="Available Stock"
+                          >12 pcs</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Deodorant</p>
+                        <data value="60" class="stock" title="Available Stock"
+                          >20 pcs</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">jacket</p>
+                        <data value="50" class="stock" title="Available Stock"
+                          >10 pcs</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">dress</p>
+                        <data value="87" class="stock" title="Available Stock"
+                          >40 pcs</data
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        src="./images/icons/cosmetics.png"
+                        alt="cosmetics"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+
+                      <p class="menu-title">Cosmetics</p>
+                    </div>
+
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                      <ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+
+                  <ul class="sidebar-submenu-category-list" data-accordion>
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Shampoo</p>
+                        <data value="68" class="stock" title="Available Stock"
+                          >18</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Sunscreen</p>
+                        <data value="46" class="stock" title="Available Stock"
+                          >16</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Body Wash</p>
+                        <data value="79" class="stock" title="Available Stock"
+                          >39</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Makeup Kit</p>
+                        <data value="23" class="stock" title="Available Stock"
+                          >23</data
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        src="./images/icons/glasses.png"
+                        alt="glasses"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+
+                      <p class="menu-title">Glasses</p>
+                    </div>
+
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                      <ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+
+                  <ul class="sidebar-submenu-category-list" data-accordion>
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Sunglasses</p>
+                        <data value="50" class="stock" title="Available Stock"
+                          >15</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Lenses</p>
+                        <data value="48" class="stock" title="Available Stock"
+                          >15</data
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        src="./images/icons/bag.png"
+                        alt="bags"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+
+                      <p class="menu-title">Bags</p>
+                    </div>
+
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                      <ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+
+                  <ul class="sidebar-submenu-category-list" data-accordion>
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Shopping Bag</p>
+                        <data value="62" class="stock" title="Available Stock"
+                          >12</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Gym Backpack</p>
+                        <data value="35" class="stock" title="Available Stock"
+                          >15</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Purse</p>
+                        <data value="80" class="stock" title="Available Stock"
+                          >20</data
+                        >
+                      </a>
+                    </li>
+
+                    <li class="sidebar-submenu-category">
+                      <a href="products.html" class="sidebar-submenu-title">
+                        <p class="product-name">Wallet</p>
+                        <data value="75" class="stock" title="Available Stock"
+                          >15</data
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <!--Best Seller-->
+            <div class="product-showcase">
+              <h3 class="showcase-heading pad">best sellers</h3>
+
+              <div class="showcase-wrapper">
+                <div class="showcase-container">
+                  <div class="showcase">
+                    <a href="products.html" class="showcase-img-box">
+                      <img
+                        src="./images/products/gset.jpg"
+                        alt="gaming headset"
+                        width="75"
+                        height="75"
+                      />
+                    </a>
+
+                    <div class="showcase-content">
+                      <a href="products.html">
+                        <h4 class="showcase-title">Gaming Headset</h4>
+                      </a>
+
+                      <div class="showcase-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+
+                      <div class="price-box">
+                        <del>$100.00</del>
+                        <p class="price">$95.00</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase">
+                    <a href="products.html" class="showcase-img-box">
+                      <img
+                        src="./images/products/earpod1.jpg"
+                        alt="men's hoodies t-shirt"
+                        class="showcase-img"
+                        width="75"
+                        height="75"
+                      />
+                    </a>
+
+                    <div class="showcase-content">
+                      <a href="products.html">
+                        <h4 class="showcase-title">Black Earpods</h4>
+                      </a>
+                      <div class="showcase-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star-half-outline"></ion-icon>
+                      </div>
+
+                      <div class="price-box">
+                        <del>$55.00</del>
+                        <p class="price">$35.00</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase">
+                    <a href="products.html" class="showcase-img-box">
+                      <img
+                        src="./images/products/playstation 5.jpg"
+                        alt="Playstation"
+                        class="showcase-img"
+                        width="75"
+                        height="75"
+                      />
+                    </a>
+
+                    <div class="showcase-content">
+                      <a href="products.html">
+                        <h4 class="showcase-title">Playstation</h4>
+                      </a>
+                      <div class="showcase-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star-half-outline"></ion-icon>
+                      </div>
+
+                      <div class="price-box">
+                        <del>$200.00</del>
+                        <p class="price">$150.00</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase">
+                    <a href="products.html" class="showcase-img-box">
+                      <img
+                        src="./images/products/project.jpg"
+                        alt="projector"
+                        class="showcase-img"
+                        width="75"
+                        height="75"
+                      />
+                    </a>
+
+                    <div class="showcase-content">
+                      <a href="products.html">
+                        <h4 class="showcase-title">Projector</h4>
+                      </a>
+                      <div class="showcase-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+
+                      <div class="price-box">
+                        <del>$199.00</del>
+                        <p class="price">$189.99</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-box">
+            <!--PRODUCT MINIMAL-->
+            <div class="product-minimal">
+              <!--NEW ARRIVAL-->
+              <div class="product-showcase">
+                <h2 class="title pad">New Arrivals</h2>
+
+                <div class="showcase-wrapper has-scrollbar">
+                  <div class="showcase-container">
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/playstation2.jpg"
+                          alt="Playstation"
+                          width="70"
+                          class="showcase-img show-img"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Playstation</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$150.00</p>
+                          <del>$200.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/playstation 5.jpg"
+                          alt="playstation"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Playstation</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$150.00</p>
+                          <del>$200.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/power-bank.jpg"
+                          alt="powerbank"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Power Bank</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$100.00</p>
+                          <del>$150.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/phone-image.jpg"
+                          alt="Iphone"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Iphone</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$200.00</p>
+                          <del>$210.00</del>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase-container">
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/phone holder2.jpg"
+                          alt="Phone Holder"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Phone Holder</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >appliance</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$70.00</p>
+                          <del>$80.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/phone-holder.jpg"
+                          alt="Phone Holder"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Phone Holder</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >appliance</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$70.00</p>
+                          <del>$80.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/p-printer.jpg"
+                          alt="picture printer"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Picture Printer</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$150.00</p>
+                          <del>$200.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/scbag.jpg"
+                          alt="picture printer"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Ladies Bag</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >bag</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$45.00</p>
+                          <del>$50.00</del>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Trending-->
+              <div class="product-showcase">
+                <h2 class="title pad">Trending</h2>
+
+                <div class="showcase-wrapper has-scrollbar">
+                  <div class="showcase-container">
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/dishrack.jpg"
+                          alt="Dish Rack"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Dish Rack</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >appliance</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$80.00</p>
+                          <del>$150.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/mwave.jpg"
+                          alt="microwave"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Microwave</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >appliance</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$199.99</p>
+                          <del>$200.99</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/walkie.jpg"
+                          alt="walkie talkie"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Walkie Talkie</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$45.00</p>
+                          <del>$65.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/speaker.jpg"
+                          alt="speaker"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Speaker</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$88.00</p>
+                          <del>$99.00</del>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase-container">
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/sblack.jpg"
+                          alt="Jean Skirt"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Jean Skirt</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >women</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$52.00</p>
+                          <del>$55.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/hoverboard.jpg"
+                          alt="HoverBoard"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">HoverBoard</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$80.99</p>
+                          <del>$90.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/mp.jpg"
+                          alt="mp3"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">MP3</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$80.00</p>
+                          <del>$90.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/tv-stand.jpg"
+                          alt="tv stand"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Television Stand</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >appliance</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$150.00</p>
+                          <del>$170.00</del>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Top Rated-->
+              <div class="product-showcase" id="hot">
+                <h2 class="title pad">Hot Offers</h2>
+
+                <div class="showcase-wrapper has-scrollbar">
+                  <div class="showcase-container">
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/mic.jpg"
+                          alt="microphone"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Microphone</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$25.00</p>
+                          <del>$35.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/chain.jpg"
+                          alt="gold chain"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Gold Chain</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >accessories
+                        </a>
+
+                        <div class="price-box">
+                          <p class="price">$84.00</p>
+                          <del>$90.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/lcurl.jpg"
+                          alt="Lash curler"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Lash Curler</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >makeup</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$20.00</p>
+                          <del>$30.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/hair.jpg"
+                          alt="shampoo"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Shampoo Conditioner</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >hair</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$145.00</p>
+                          <del>$150.00</del>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="showcase-container">
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/bag.jpg"
+                          alt="Ladies Bag"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Ladies Bag</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >bag</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$70.00</p>
+                          <del>$80.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/earpod1.jpg"
+                          alt="ear pods"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">White Earpods</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$35.00</p>
+                          <del>$55.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/desktop.jpg"
+                          alt="desktop set"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Desktop Set</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$300.00</p>
+                          <del>$310.00</del>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="showcase">
+                      <a href="products.html" class="showcase-img-box">
+                        <img
+                          src="./images/products/earpod2.jpg"
+                          alt="Earpods"
+                          class="showcase-img show-img"
+                          width="70"
+                        />
+                      </a>
+
+                      <div class="showcase-content">
+                        <a href="products.html">
+                          <h4 class="showcase-title">Black Earpods</h4>
+                        </a>
+
+                        <a href="products.html" class="showcase-category"
+                          >electronic</a
+                        >
+
+                        <div class="price-box">
+                          <p class="price">$35.00</p>
+                          <del>$55.00</del>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--PRODUCT FEATURED-->
+            <div class="product-featured">
+              <h2 class="title pad">Trending Items</h2>
+
+              <div class="showcase-wrapper has-scrollbar">
+                <div class="showcase-container">
+                  <div class="showcase">
+                    <div class="showcase-banner">
+                      <img
+                        src="./images/products/gset.jpg"
+                        style="width: 200px !important"
+                        alt="pink headset"
+                        class="showcase-img"
+                      />
+                    </div>
+
+                    <div class="showcase-content">
+                      <div class="showcase-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star-outline"></ion-icon>
+                        <ion-icon name="star-outline"></ion-icon>
+                      </div>
+
+                      <a href="products.html">
+                        <h3 class="showcase-title">Gaming Headset</h3>
+                      </a>
+
+                      <p class="showcase-desc">
+                        Pink Gaming Headset ready set win, make you game come
+                        alive and enjoy the uninterupted sound of your game.
+                      </p>
+
+                      <div class="price-box">
+                        <p class="price">$95.00</p>
+
+                        <del>$100.00</del>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase-container">
+                  <div class="showcase">
+                    <div class="showcase-banner">
+                      <img
+                        src="./images/products/fan.jpg"
+                        alt="Hand fan"
+                        style="width: 200px !important"
+                        class="showcase-img"
+                      />
+                    </div>
+
+                    <div class="showcase-content">
+                      <div class="showcase-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star-outline"></ion-icon>
+                        <ion-icon name="star-outline"></ion-icon>
+                      </div>
+
+                      <h3 class="showcase-title">
+                        <a href="products.html" class="showcase-title"
+                          >Hand Fan</a
+                        >
+                      </h3>
+
+                      <p class="showcase-desc">
+                        Hand Fan that blows cool air and leaves you feeling
+                        fresh and minty available in different color
+                      </p>
+
+                      <div class="price-box">
+                        <p class="price">$20.00</p>
+                        <del>$30.00</del>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--PRODUCT GRID-->
+            <div class="product-main">
+              <h2 class="title">New Products</h2>
+
+              <div class="product-grid">
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/dblue.jpg"
+                      alt="Dress"
+                      width="300"
+                      class="product-img default"
+                    />
+                    <img
+                      src="./images/products/dpink.jpg"
+                      alt="Dress"
+                      width="300"
+                      class="product-img hover"
+                    />
+
+                    <p class="showcase-badge">25%</p>
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">Women</a>
+
+                    <a href="#">
+                      <h3 class="showcase-title">Bow Dress</h3>
+                    </a>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$56.00</p>
+                      <del>$75.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/dred.jpg"
+                      alt="Dress"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/dnavy.jpg"
+                      alt="dresss"
+                      class="product-img hover"
+                      width="300"
+                    />
+
+                    <p class="showcase-badge angle black">sale</p>
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">women</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">Offshoulder Dress</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$45.00</p>
+                      <del>$56.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/dfbrown.jpg"
+                      alt="Dress"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/dfpink.jpg"
+                      alt="Dress"
+                      class="product-img hover"
+                      width="300"
+                    />
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">women</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">Bubble Dress</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$58.00</p>
+                      <del>$65.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/promgreen.jpg"
+                      alt="prom dress"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/promblue.jpg"
+                      alt="Prom dress"
+                      class="product-img hover"
+                      width="300"
+                    />
+
+                    <p class="showcase-badge angle pink">new</p>
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">women</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">Ball Gown</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$76.00</p>
+                      <del>$86.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/updownblue.jpg"
+                      alt="Up and down suite skirt"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/updownwhite.jpg"
+                      alt="Up and down suite skirt"
+                      class="product-img hover"
+                      width="300"
+                    />
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">women</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">Suit Skirt</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$99.00</p>
+                      <del>$105.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/earpod1.jpg"
+                      alt="earpods"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/earpod2.jpg"
+                      alt="earpods"
+                      class="product-img hover"
+                      width="300"
+                    />
+
+                    <p class="showcase-badge angle black">sale</p>
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">electronic</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">EarPods</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$50.00</p>
+                      <del>$64.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/chair.jpg"
+                      alt="chair"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/chair2.jpg"
+                      alt="Chair"
+                      class="product-img hover"
+                      width="300"
+                    />
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">appliance</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">Gaming Chair</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$56.00</p>
+                      <del>$78.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/whiteshirt.jpg"
+                      alt="Shirt"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/gray.jpg"
+                      alt="Shirt"
+                      class="product-img hover"
+                      width="300"
+                    />
+
+                    <p class="showcase-badge angle black">sale</p>
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">men</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">Plain T-Shirt</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$25.00</p>
+                      <del>$30.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/glass.jpg"
+                      alt="Glasses"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/glass3.jpg"
+                      alt="Mens Winter Leathers Jackets"
+                      class="product-img hover"
+                      width="300"
+                    />
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">glasses</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">Eye Glasses</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$15.00</p>
+                      <del>$25.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/playstation 5.jpg"
+                      alt="Playstation"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/playstation2.jpg"
+                      alt="Playstation"
+                      class="product-img hover"
+                      width="300"
+                    />
+
+                    <p class="showcase-badge angle black">sale</p>
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">electronic</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">Playstation</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$58.00</p>
+                      <del>$64.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/tv 1.avif"
+                      alt="Television"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/tv 2.avif"
+                      alt="Television"
+                      class="product-img hover"
+                      width="300"
+                    />
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">electronic</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">Television</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$199.00</p>
+                      <del>$209.00</del>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="showcase">
+                  <div class="showcase-banner">
+                    <img
+                      src="./images/products/rbag.jpg"
+                      alt="Ladies Bag"
+                      class="product-img default"
+                      width="300"
+                    />
+                    <img
+                      src="./images/products/bag.jpg"
+                      alt="Ladies Bag"
+                      class="product-img hover"
+                      width="300"
+                    />
+
+                    <p class="showcase-badge angle black">sale</p>
+                  </div>
+
+                  <div class="showcase-content">
+                    <a href="#" class="showcase-category">bag</a>
+
+                    <h3>
+                      <a href="#" class="showcase-title">Ladies Bag</a>
+                    </h3>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <p class="price">$58.00</p>
+                      <del>$64.00</del>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--TESTIMONIALS-->
+      <div>
+        <div class="container">
+          <div class="testimonials-box">
+            <!--TESTIMONIALS-->
+
+            <div class="testimonial">
+              <h2 class="title pad">testimonial</h2>
+
+              <div class="testimonial-card">
+                <img
+                  src="./images/testimonial.jpg"
+                  alt="alan doe"
+                  class="testimonial-banner"
+                  width="80"
+                  height="80"
+                />
+
+                <p class="testimonial-name">Liliana Jones</p>
+
+                <p class="testimonial-title">CEO & Founder Bookwork</p>
+
+                <p class="testimonial-desc">
+                  Loved shopping at treasures store very wonderful experience
+                </p>
+              </div>
+            </div>
+
+            <!--CTA-->
+            <div class="cta-container">
+              <img
+                src="./images/cta-banner.jpg"
+                alt="summer collection"
+                class="cta-banner"
+              />
+
+              <a href="#" class="cta-content">
+                <p class="discount">25% Discount</p>
+
+                <h2 class="cta-title">Summer collection</h2>
+
+                <p class="cta-text">Starting @ $10</p>
+
+                <button class="cta-btn">Shop now</button>
+              </a>
+            </div>
+
+            <!--SERVICE-->
+            <div class="service">
+              <h2 class="title pad">Our Services</h2>
+
+              <div class="service-container">
+                <a href="#" class="service-item">
+                  <div class="service-icon">
+                    <ion-icon name="arrow-undo-outline"></ion-icon>
+                  </div>
+
+                  <div class="service-content">
+                    <h3 class="service-title">Return Policy</h3>
+                    <p class="service-desc">Easy & Free Return</p>
+                  </div>
+                </a>
+
+                <a href="#" class="service-item">
+                  <div class="service-icon">
+                    <ion-icon name="rocket-outline"></ion-icon>
+                  </div>
+
+                  <div class="service-content">
+                    <h3 class="service-title">Next Day delivery</h3>
+                    <p class="service-desc">Nigerian Orders Only</p>
+                  </div>
+                </a>
+
+                <a href="#" class="service-item">
+                  <div class="service-icon">
+                    <ion-icon name="call-outline"></ion-icon>
+                  </div>
+
+                  <div class="service-content">
+                    <h3 class="service-title">Best Online Support</h3>
+                    <p class="service-desc">Hours: 8AM - 11PM</p>
+                  </div>
+                </a>
+
+                <a href="#" class="service-item">
+                  <div class="service-icon">
+                    <ion-icon name="boat-outline"></ion-icon>
+                  </div>
+
+                  <div class="service-content">
+                    <h3 class="service-title">Worldwide Delivery</h3>
+                    <p class="service-desc">For Order Over $100</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--BLOG-->
+      <section id="blog" class="blog">
+        <div class="container">
+          <h2 class="pad">Blog Section</h2>
+          <div class="blog-container has-scrollbar">
+            <div class="blog-card">
+              <a href="#">
+                <img
+                  src="./images/blog-1.jpg"
+                  alt="Mastering Street Style: From Sidewalk to Spotlight."
+                  class="blog-banner"
+                  width="300"
+                />
+              </a>
+
+              <div class="blog-content">
+                <a href="#" class="blog-category">Street Style</a>
+
+                <h3>
+                  <a href="street.html" class="blog-title"
+                    >Mastering Street Style: From Sidewalk to Spotlight</a
+                  >
+                </h3>
+
+                <p class="blog-meta">
+                  <span>By</span>
+                  <cite>Miss Treasure</cite> /
+                  <time datetime="2022-03-15">May 01, 2025</time>
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <a href="#">
+                <img
+                  src="./images/blog-4.jpg"
+                  alt="The Art of Less: Building a Minimalist Wardrobe That Works"
+                  width="300"
+                  class="blog-banner"
+                />
+              </a>
+
+              <div class="blog-content">
+                <a href="minimal.html" class="blog-category">Minimalism</a>
+
+                <a href="minimal.html">
+                  <h3 class="blog-title">
+                    The Art of Less: Building a Minimalist Wardrobe That Works
+                  </h3>
+                </a>
+
+                <p class="blog-meta">
+                  <span>By</span>
+                  <cite>Miss Treasure</cite> /
+                  <time datetime="2022-04-06">May 06, 2025</time>
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <a href="#">
+                <img
+                  src="./images/blog-3.jpg"
+                  alt="Fashion Meets Future: How Technology is Reshaping Style"
+                  class="blog-banner"
+                  width="300"
+                />
+              </a>
+
+              <div class="blog-content">
+                <a href="#" class="blog-category">Technology</a>
+
+                <h3>
+                  <a href="tech.html" class="blog-title"
+                    >Fashion Meets Future: How Technology is Reshaping Style</a
+                  >
+                </h3>
+
+                <p class="blog-meta">
+                  <span>By</span>
+                  <cite>Miss Treasure</cite> /
+                  <time datetime="2022-02-10">May 10, 2025</time>
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <a href="#">
+                <img
+                  src="./images/blog-2.jpg"
+                  alt="The Sustainable Fashion Revolution: Why Eco-Friendly is the
+                  New Black."
+                  class="blog-banner"
+                  width="300"
+                />
+              </a>
+
+              <div class="blog-content">
+                <a href="#" class="blog-category">Sustainability</a>
+
+                <h3>
+                  <a href="sustain.html" class="blog-title"
+                    >The Sustainable Fashion Revolution: Why Eco-Friendly is the
+                    New Black</a
+                  >
+                </h3>
+
+                <p class="blog-meta">
+                  <span>By</span>
+                  <cite>Miss Treasure</cite> /
+                  <time datetime="2022-01-18">May 18, 2025</time>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <footer>
+      <div class="footer-category">
+        <div class="container">
+          <h2 class="footer-category-title">Brand directory</h2>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title">Fashion :</h3>
+
+            <a href="#" class="footer-category-link">T-shirt</a>
+            <a href="#" class="footer-category-link">shorts & jeans</a>
+            <a href="#" class="footer-category-link">jacket</a>
+            <a href="#" class="footer-category-link">dress</a>
+            <a href="#" class="footer-category-link">innerwear</a>
+          </div>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title">footwear :</h3>
+
+            <a href="#" class="footer-category-link">sport</a>
+            <a href="#" class="footer-category-link">formal</a>
+            <a href="#" class="footer-category-link">Boots</a>
+            <a href="#" class="footer-category-link">casual</a>
+            <a href="#" class="footer-category-link">safety shoes</a>
+            <a href="#" class="footer-category-link">Party wear shoes</a>
+            <a href="#" class="footer-category-link">Branded</a>
+          </div>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title">jewellery :</h3>
+
+            <a href="#" class="footer-category-link">Necklace</a>
+            <a href="#" class="footer-category-link">Couple rings</a>
+            <a href="#" class="footer-category-link">Crystal</a>
+            <a href="#" class="footer-category-link">Bangles</a>
+            <a href="#" class="footer-category-link">bracelets</a>
+            <a href="#" class="footer-category-link">nosepin</a>
+            <a href="#" class="footer-category-link">chain</a>
+            <a href="#" class="footer-category-link">Earrings</a>
+          </div>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title">cosmetics :</h3>
+
+            <a href="#" class="footer-category-link">Shampoo</a>
+            <a href="#" class="footer-category-link">Bodywash</a>
+            <a href="#" class="footer-category-link">Facewash</a>
+            <a href="#" class="footer-category-link">makeup kit</a>
+            <a href="#" class="footer-category-link">lipstick</a>
+            <a href="#" class="footer-category-link">prefume</a>
+            <a href="#" class="footer-category-link">scrub</a>
+            <a href="#" class="footer-category-link">hair gel</a>
+            <a href="#" class="footer-category-link">hair dye</a>
+            <a href="#" class="footer-category-link">sunscreen</a>
+            <a href="#" class="footer-category-link">liner</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <div class="container">
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Popular Categories</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="products.html?category=women" class="footer-nav-link"
+                >Women</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a
+                href="products.html?category=electronics"
+                class="footer-nav-link"
+                >Electronic</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="products.html?category=jewellery" class="footer-nav-link"
+                >Jewellery</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="products.html?category=footwear" class="footer-nav-link"
+                >Footwear</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="products.html?category=watch" class="footer-nav-link"
+                >Watches</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Products</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Prices drop</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">New products</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Best sales</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Popular Sales</a>
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Our Company</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Delivery</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Legal Notice</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Terms and conditions</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">About us</a>
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Services</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Prices drop</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">New products</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Best sales</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Contact us</a>
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Contact</h2>
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <address class="content">
+                Ochacho Estate idu, Abuja, 90001, Nigeria
+              </address>
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+
+              <a href="tel:+2349135206161" class="footer-nav-link"
+                >(234) 91-3520-6161</a
+              >
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <a href="mailto:treasureamuka@gmail.com" class="footer-nav-link"
+                >treasureamuka@gmail.com</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Follow Us</h2>
+            </li>
+
+            <li>
+              <ul class="social-link">
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <img
+            src="./images/payment.png"
+            alt="payment method"
+            class="payment-img"
+          />
+
+          <p class="copyright">
+            Copyright &copy; <a href="#">Treasure</a> all rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

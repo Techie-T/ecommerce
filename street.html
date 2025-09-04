@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Street Style Mastery Post</title>
+    <link
+      rel="shortcut icon"
+      href="./images/icons/myriad.png"
+      type="image/x-icon"
+    />
+    <style>
+      .back-btn {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 10px 20px;
+        background: var(--salmon-pink);
+        color: var(--white);
+        border-radius: var(--border-radius-sm);
+        font-weight: var(--weight-600);
+        transition: var(--transition-timing);
+      }
+      .back-btn:hover {
+        background: var(--eerie-black);
+      }
+      .blog-content p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+      .blog-card img {
+        width: 50%;
+        margin: 10px auto 0 auto;
+      }
+
+      @media (max-width: 480px) {
+        .blog-card img {
+          width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .blog-card img {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>
+      <nav class="desktop-navigation-menu">
+        <div class="container">
+          <ul class="desktop-menu-category-list">
+            <a href="#" class="header-logo">
+              <img
+                src="./images/icons/myriad.png"
+                alt="Treasure's logo"
+                width="70"
+                height="50"
+              />
+            </a>
+            <li class="menu-category">
+              <a href="#" class="menu-title">Home</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="products.html?category=electronic" class="menu-title"
+                >Electronics</a
+              >
+            </li>
+
+            <li class="menu-category">
+              <a href="#" class="menu-title">Men's</a>
+
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="products.html?category=men">Shirt</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=shorts">Shorts & Jeans</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=footwear">Safety Shoes</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=men">Wallet</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-category">
+              <a href="#" class="menu-title">Women's</a>
+
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="products.html?category=women">Dress & Frock</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Earrings</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Necklace</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="makeup">Makeup Kit</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-category">
+              <a href="#" class="menu-title">Jewelry</a>
+
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Earrings</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Couple Rings</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Necklace</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=jewellery">Bracelets</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-category">
+              <a href="#" class="menu-title">Perfume</a>
+
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="products.html?category=perfume">Clothes Perfume</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=perfume">Deodorant</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=perfume">Flower Fragrance</a>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="products.html?category=perfume">Air Freshener</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-category">
+              <a href="#blog" class="menu-title">Blog</a>
+            </li>
+
+            <li class="menu-category">
+              <a href="#hot" class="menu-title">Hot Offers</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="mobile-bottom-navigation">
+        <button class="action-btn">
+          <a href="products.html"> <ion-icon name="bag-outline"></ion-icon></a>
+        </button>
+
+        <button class="action-btn" data-mobile-menu-open-btn>
+          <a href="home.html#blog"><ion-icon name="grid-outline"></ion-icon></a>
+        </button>
+      </div>
+
+      <nav class="mobile-navigation-menu has-scrollbar" data-mobile-menu>
+        <div class="menu-top">
+          <h2 class="menu-title">Menu</h2>
+
+          <button class="menu-close-btn" data-mobile-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="mobile-menu-category-list">
+          <li class="menu-category">
+            <a href="#" class="menu-title">Home</a>
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Men's</p>
+
+              <div>
+                <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Shirt</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Shorts & Jeans</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Safety Shoes</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Wallet</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Women's</p>
+
+              <div>
+                <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Dress & Frock</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Earrings</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Necklace</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Makeup Kit</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Jewelry</p>
+
+              <div>
+                <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Earrings</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Couple Rings</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Necklace</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Bracelets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Perfume</p>
+
+              <div>
+                <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Clothes Perfume</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Deodorant</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Flower Fragrance</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Air Freshener</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a href="#blog" class="menu-title">Blog</a>
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Hot Offers</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="blog">
+      <div class="container">
+        <div class="blog-card">
+          <img
+            src="images/blog-1.jpg"
+            alt="Street Style Mastery"
+            class="blog-banner"
+          />
+
+          <div class="blog-content">
+            <a href="#" class="blog-category">Street Style</a>
+            <h3 class="blog-title">
+              Mastering Street Style: From Sidewalk to Spotlight
+            </h3>
+            <p class="blog-meta">
+              By <cite>Miss Treasure</cite> /
+              <time datetime="2025-05-01">May 01, 2025</time>
+            </p>
+
+            <p>
+              Street style has evolved from casual urban fashion to a powerful
+              form of self-expression that influences runways worldwide. It's
+              where creativity meets comfort, and personal style takes center
+              stage over brand labels.
+            </p>
+
+            <p>
+              The key to great street style lies in mixing unexpected pieces.
+              Pair a vintage band tee with tailored trousers, or throw a blazer
+              over a graphic dress. The magic happens when high meets low,
+              formal meets casual, and structured meets relaxed. It's about
+              breaking fashion rules while maintaining your authentic voice.
+            </p>
+
+            <p>
+              Accessories are the secret weapon of street style masters. A
+              statement belt can transform a simple outfit, while the right
+              sneakers can make even the most formal look feel approachable.
+              Don't underestimate the power of a well-chosen bag, hat, or
+              jewelry piece to elevate your entire ensemble.
+            </p>
+
+            <p>
+              Color coordination doesn't mean everything has to match. Street
+              style celebrates bold contrasts and unexpected combinations. Try
+              monochromatic looks in different textures, or experiment with
+              complementary colors that make each other pop. The urban landscape
+              is your backdrop—make sure you stand out against it.
+            </p>
+
+            <p>
+              Remember, the best street style is confident style. Wear what
+              makes you feel powerful and authentic. When you're comfortable in
+              your clothes, it shows in your posture, your smile, and the way
+              you move through the world. That confidence is what truly makes
+              street style shine.
+            </p>
+
+            <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer>
+      <div class="footer-category">
+        <div class="container">
+          <h2 class="footer-category-title">Brand directory</h2>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title">Fashion :</h3>
+
+            <a href="#" class="footer-category-link">T-shirt</a>
+            <a href="#" class="footer-category-link">shorts & jeans</a>
+            <a href="#" class="footer-category-link">jacket</a>
+            <a href="#" class="footer-category-link">dress</a>
+            <a href="#" class="footer-category-link">innerwear</a>
+          </div>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title">footwear :</h3>
+
+            <a href="#" class="footer-category-link">sport</a>
+            <a href="#" class="footer-category-link">formal</a>
+            <a href="#" class="footer-category-link">Boots</a>
+            <a href="#" class="footer-category-link">casual</a>
+            <a href="#" class="footer-category-link">safety shoes</a>
+            <a href="#" class="footer-category-link">Party wear shoes</a>
+            <a href="#" class="footer-category-link">Branded</a>
+          </div>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title">jewellery :</h3>
+
+            <a href="#" class="footer-category-link">Necklace</a>
+            <a href="#" class="footer-category-link">Couple rings</a>
+            <a href="#" class="footer-category-link">Crystal</a>
+            <a href="#" class="footer-category-link">Bangles</a>
+            <a href="#" class="footer-category-link">bracelets</a>
+            <a href="#" class="footer-category-link">nosepin</a>
+            <a href="#" class="footer-category-link">chain</a>
+            <a href="#" class="footer-category-link">Earrings</a>
+          </div>
+
+          <div class="footer-category-box">
+            <h3 class="category-box-title">cosmetics :</h3>
+
+            <a href="#" class="footer-category-link">Shampoo</a>
+            <a href="#" class="footer-category-link">Bodywash</a>
+            <a href="#" class="footer-category-link">Facewash</a>
+            <a href="#" class="footer-category-link">makeup kit</a>
+            <a href="#" class="footer-category-link">lipstick</a>
+            <a href="#" class="footer-category-link">prefume</a>
+            <a href="#" class="footer-category-link">scrub</a>
+            <a href="#" class="footer-category-link">hair gel</a>
+            <a href="#" class="footer-category-link">hair dye</a>
+            <a href="#" class="footer-category-link">sunscreen</a>
+            <a href="#" class="footer-category-link">liner</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <div class="container">
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Popular Categories</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="products.html?category=women" class="footer-nav-link"
+                >Women</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a
+                href="products.html?category=electronics"
+                class="footer-nav-link"
+                >Electronic</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="products.html?category=jewellery" class="footer-nav-link"
+                >Jewellery</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="products.html?category=footwear" class="footer-nav-link"
+                >Footwear</a
+              >
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="products.html?category=watch" class="footer-nav-link"
+                >Watches</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Products</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Prices drop</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">New products</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Best sales</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Popular Sales</a>
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Our Company</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Delivery</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Legal Notice</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Terms and conditions</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">About us</a>
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Services</h2>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Prices drop</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">New products</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Best sales</a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Contact us</a>
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Contact</h2>
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <address class="content">
+                Ochacho Estate idu, Abuja, 90001, Nigeria
+              </address>
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+
+              <a href="tel:+2349135206161" class="footer-nav-link"
+                >(234) 91-3520-6161</a
+              >
+            </li>
+
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <a href="mailto:treasureamuka@gmail.com" class="footer-nav-link"
+                >treasureamuka@gmail.com</a
+              >
+            </li>
+          </ul>
+
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Follow Us</h2>
+            </li>
+
+            <li>
+              <ul class="social-link">
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <img
+            src="./images/payment.png"
+            alt="payment method"
+            class="payment-img"
+          />
+
+          <p class="copyright">
+            Copyright &copy; <a href="#">Treasure</a> all rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
